@@ -1,0 +1,28 @@
+[2022-09-12 10:01:51.092] [pxr_streamer] [info] ***********  Log Begin **********
+[2022-09-12 10:01:51.092] [pxr_streamer] [info] process id= 25584
+[2022-09-12 10:01:51.092] [pxr_streamer] [error] rpc_terminal.cpp:37 operator (): connect failed, error= Det gick inte att göra en anslutning eftersom måldatorn aktivt nekade det., this = 0xd41ab3e0
+[2022-09-12 10:01:51.096] [pxr_streamer] [error] rpc_terminal.h:50 Call: invalid rpc_client_, msg = Hello, this = 0xd41ab3e0
+[2022-09-12 10:01:51.096] [pxr_streamer] [error] rpc_terminal.h:50 Call: invalid rpc_client_, msg = QueryRemoteTerminals, this = 0xd41ab3e0
+[2022-09-12 10:01:54.099] [pxr_streamer] [error] rpc_terminal.cpp:37 operator (): connect failed, error= Det gick inte att göra en anslutning eftersom måldatorn aktivt nekade det., this = 0xd41ab3e0
+[2022-09-12 10:01:57.104] [pxr_streamer] [error] rpc_terminal.cpp:37 operator (): connect failed, error= Det gick inte att göra en anslutning eftersom måldatorn aktivt nekade det., this = 0xd41ab3e0
+[2022-09-12 10:02:00.107] [pxr_streamer] [error] rpc_terminal.cpp:37 operator (): connect failed, error= Det gick inte att göra en anslutning eftersom måldatorn aktivt nekade det., this = 0xd41ab3e0
+[2022-09-12 10:02:03.111] [pxr_streamer] [error] rpc_terminal.cpp:37 operator (): connect failed, error= Det gick inte att göra en anslutning eftersom måldatorn aktivt nekade det., this = 0xd41ab3e0
+[2022-09-12 10:02:06.115] [pxr_streamer] [error] rpc_terminal.cpp:37 operator (): connect failed, error= Det gick inte att göra en anslutning eftersom måldatorn aktivt nekade det., this = 0xd41ab3e0
+[2022-09-12 10:02:09.119] [pxr_streamer] [error] rpc_terminal.cpp:37 operator (): connect failed, error= Det gick inte att göra en anslutning eftersom måldatorn aktivt nekade det., this = 0xd41ab3e0
+[2022-09-12 10:02:12.122] [pxr_streamer] [error] rpc_terminal.cpp:37 operator (): connect failed, error= Det gick inte att göra en anslutning eftersom måldatorn aktivt nekade det., this = 0xd41ab3e0
+[2022-09-12 10:02:15.127] [pxr_streamer] [error] rpc_terminal.cpp:37 operator (): connect failed, error= Det gick inte att göra en anslutning eftersom måldatorn aktivt nekade det., this = 0xd41ab3e0
+[2022-09-12 10:02:18.132] [pxr_streamer] [error] rpc_terminal.cpp:37 operator (): connect failed, error= Det gick inte att göra en anslutning eftersom måldatorn aktivt nekade det., this = 0xd41ab3e0
+[2022-09-12 10:02:21.137] [pxr_streamer] [error] rpc_terminal.cpp:37 operator (): connect failed, error= Det gick inte att göra en anslutning eftersom måldatorn aktivt nekade det., this = 0xd41ab3e0
+[2022-09-12 10:02:24.163] [pxr_streamer] [error] rpc_terminal.cpp:37 operator (): connect failed, error= Det gick inte att göra en anslutning eftersom måldatorn aktivt nekade det., this = 0xd41ab3e0
+[2022-09-12 10:02:27.167] [pxr_streamer] [error] rpc_terminal.cpp:37 operator (): connect failed, error= Det gick inte att göra en anslutning eftersom måldatorn aktivt nekade det., this = 0xd41ab3e0
+[2022-09-12 10:02:30.172] [pxr_streamer] [error] rpc_terminal.cpp:37 operator (): connect failed, error= Det gick inte att göra en anslutning eftersom måldatorn aktivt nekade det., this = 0xd41ab3e0
+[2022-09-12 10:02:33.177] [pxr_streamer] [error] rpc_terminal.cpp:37 operator (): connect failed, error= Det gick inte att göra en anslutning eftersom måldatorn aktivt nekade det., this = 0xd41ab3e0
+[2022-09-12 10:02:36.181] [pxr_streamer] [error] rpc_terminal.cpp:37 operator (): connect failed, error= Det gick inte att göra en anslutning eftersom måldatorn aktivt nekade det., this = 0xd41ab3e0
+[2022-09-12 10:02:39.186] [pxr_streamer] [error] rpc_terminal.cpp:37 operator (): connect failed, error= Det gick inte att göra en anslutning eftersom måldatorn aktivt nekade det., this = 0xd41ab3e0
+[2022-09-12 10:02:42.191] [pxr_streamer] [error] rpc_terminal.cpp:37 operator (): connect failed, error= Det gick inte att göra en anslutning eftersom måldatorn aktivt nekade det., this = 0xd41ab3e0
+[2022-09-12 10:02:45.196] [pxr_streamer] [error] rpc_terminal.cpp:37 operator (): connect failed, error= Det gick inte att göra en anslutning eftersom måldatorn aktivt nekade det., this = 0xd41ab3e0
+[2022-09-12 10:02:48.200] [pxr_streamer] [error] rpc_terminal.cpp:37 operator (): connect failed, error= Det gick inte att göra en anslutning eftersom måldatorn aktivt nekade det., this = 0xd41ab3e0
+[2022-09-12 10:02:51.206] [pxr_streamer] [error] rpc_terminal.cpp:37 operator (): connect failed, error= Det gick inte att göra en anslutning eftersom måldatorn aktivt nekade det., this = 0xd41ab3e0
+[2022-09-12 10:02:54.210] [pxr_streamer] [error] rpc_terminal.cpp:37 operator (): connect failed, error= Det gick inte att göra en anslutning eftersom måldatorn aktivt nekade det., this = 0xd41ab3e0
+[2022-09-12 10:02:57.214] [pxr_streamer] [error] rpc_terminal.cpp:37 operator (): connect failed, error= Det gick inte att göra en anslutning eftersom måldatorn aktivt nekade det., this = 0xd41ab3e0
+[2022-09-12 10:03:00.220] [pxr_streamer] [error] rpc_terminal.cpp:37 operator (): connect failed, error= Det gick inte att göra en anslutning eftersom måldatorn aktivt nekade det., this = 0xd41ab3e0
