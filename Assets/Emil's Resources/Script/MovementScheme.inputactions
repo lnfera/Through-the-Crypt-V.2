@@ -1,0 +1,95 @@
+{
+    "name": "MovementScheme",
+    "maps": [
+        {
+            "name": "VRLeftHand",
+            "id": "9af5d0a1-8a16-4a3c-abc2-dcdfc5f7882d",
+            "actions": [
+                {
+                    "name": "Move Joystick",
+                    "type": "Button",
+                    "id": "4f1ce87f-21e7-4f59-82be-4ed1bfaabfc8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "bd5e2e02-c572-4afe-a589-e3c96ad0bab6",
+                    "path": "<Joystick>/stick/up",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move Joystick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d90e4740-963d-4e46-929e-6a02b9bdf2db",
+                    "path": "<Joystick>/stick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move Joystick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1aba2a38-492e-404f-bf25-16b9579a6d71",
+                    "path": "<Joystick>/stick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move Joystick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "941cf893-2d41-490a-80ec-c1fd855d95d8",
+                    "path": "<Joystick>/stick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move Joystick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "VRRightHand",
+            "id": "afaf48c8-4e52-4b20-a85c-5b0b47ae2386",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "f3ecfb11-4d3c-4496-a41c-f6345cce08f3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "51a56cf5-180f-4fe5-a79d-8453f34cf0e0",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
