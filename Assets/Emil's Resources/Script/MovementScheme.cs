@@ -15,98 +15,60 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
+
 public partial class @MovementScheme : IInputActionCollection2, IDisposable
 {
     public InputActionAsset asset { get; }
+    public XRIDefaultInputActions input;
+    
     public @MovementScheme()
     {
         asset = InputActionAsset.FromJson(@"{
     ""name"": ""MovementScheme"",
     ""maps"": [
         {
-            ""name"": ""VRLeftHand"",
-            ""id"": ""9af5d0a1-8a16-4a3c-abc2-dcdfc5f7882d"",
+            ""name"": ""LeftHandCustom"",
+            ""id"": ""02b4786a-13c8-43a9-885f-e79764b5b776"",
             ""actions"": [
                 {
-                    ""name"": ""Move Joystick"",
+                    ""name"": ""Grab"",
                     ""type"": ""Button"",
-                    ""id"": ""4f1ce87f-21e7-4f59-82be-4ed1bfaabfc8"",
+                    ""id"": ""5d089f15-f555-4475-a515-1a15df953cb3"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""847a3390-83aa-4873-9787-be547db59f03"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold"",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""bd5e2e02-c572-4afe-a589-e3c96ad0bab6"",
-                    ""path"": ""<Joystick>/stick/up"",
+                    ""id"": ""8b18274d-09a2-4e3a-977b-b78b15fa1e1b"",
+                    ""path"": ""<PXR_Controller>{LeftHand}/gripPressed"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Grab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2ffed902-fe63-472f-ac87-30cbc40b3eef"",
+                    ""path"": ""<PXR_Controller>{LeftHand}/thumbstickTouched"",
                     ""interactions"": ""Hold"",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move Joystick"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""d90e4740-963d-4e46-929e-6a02b9bdf2db"",
-                    ""path"": ""<Joystick>/stick/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move Joystick"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""1aba2a38-492e-404f-bf25-16b9579a6d71"",
-                    ""path"": ""<Joystick>/stick/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move Joystick"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""941cf893-2d41-490a-80ec-c1fd855d95d8"",
-                    ""path"": ""<Joystick>/stick/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move Joystick"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""VRRightHand"",
-            ""id"": ""afaf48c8-4e52-4b20-a85c-5b0b47ae2386"",
-            ""actions"": [
-                {
-                    ""name"": ""New action"",
-                    ""type"": ""Button"",
-                    ""id"": ""f3ecfb11-4d3c-4496-a41c-f6345cce08f3"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""51a56cf5-180f-4fe5-a79d-8453f34cf0e0"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -115,12 +77,10 @@ public partial class @MovementScheme : IInputActionCollection2, IDisposable
     ],
     ""controlSchemes"": []
 }");
-        // VRLeftHand
-        m_VRLeftHand = asset.FindActionMap("VRLeftHand", throwIfNotFound: true);
-        m_VRLeftHand_MoveJoystick = m_VRLeftHand.FindAction("Move Joystick", throwIfNotFound: true);
-        // VRRightHand
-        m_VRRightHand = asset.FindActionMap("VRRightHand", throwIfNotFound: true);
-        m_VRRightHand_Newaction = m_VRRightHand.FindAction("New action", throwIfNotFound: true);
+        // LeftHandCustom
+        m_LeftHandCustom = asset.FindActionMap("LeftHandCustom", throwIfNotFound: true);
+        m_LeftHandCustom_Grab = m_LeftHandCustom.FindAction("Grab", throwIfNotFound: true);
+        m_LeftHandCustom_Move = m_LeftHandCustom.FindAction("Move", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -177,77 +137,49 @@ public partial class @MovementScheme : IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // VRLeftHand
-    private readonly InputActionMap m_VRLeftHand;
-    private IVRLeftHandActions m_VRLeftHandActionsCallbackInterface;
-    private readonly InputAction m_VRLeftHand_MoveJoystick;
-    public struct VRLeftHandActions
+    // LeftHandCustom
+    private readonly InputActionMap m_LeftHandCustom;
+    private ILeftHandCustomActions m_LeftHandCustomActionsCallbackInterface;
+    private readonly InputAction m_LeftHandCustom_Grab;
+    private readonly InputAction m_LeftHandCustom_Move;
+    public struct LeftHandCustomActions
     {
         private @MovementScheme m_Wrapper;
-        public VRLeftHandActions(@MovementScheme wrapper) { m_Wrapper = wrapper; }
-        public InputAction @MoveJoystick => m_Wrapper.m_VRLeftHand_MoveJoystick;
-        public InputActionMap Get() { return m_Wrapper.m_VRLeftHand; }
+        public LeftHandCustomActions(@MovementScheme wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Grab => m_Wrapper.m_LeftHandCustom_Grab;
+        public InputAction @Move => m_Wrapper.m_LeftHandCustom_Move;
+        public InputActionMap Get() { return m_Wrapper.m_LeftHandCustom; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(VRLeftHandActions set) { return set.Get(); }
-        public void SetCallbacks(IVRLeftHandActions instance)
+        public static implicit operator InputActionMap(LeftHandCustomActions set) { return set.Get(); }
+        public void SetCallbacks(ILeftHandCustomActions instance)
         {
-            if (m_Wrapper.m_VRLeftHandActionsCallbackInterface != null)
+            if (m_Wrapper.m_LeftHandCustomActionsCallbackInterface != null)
             {
-                @MoveJoystick.started -= m_Wrapper.m_VRLeftHandActionsCallbackInterface.OnMoveJoystick;
-                @MoveJoystick.performed -= m_Wrapper.m_VRLeftHandActionsCallbackInterface.OnMoveJoystick;
-                @MoveJoystick.canceled -= m_Wrapper.m_VRLeftHandActionsCallbackInterface.OnMoveJoystick;
+                @Grab.started -= m_Wrapper.m_LeftHandCustomActionsCallbackInterface.OnGrab;
+                @Grab.performed -= m_Wrapper.m_LeftHandCustomActionsCallbackInterface.OnGrab;
+                @Grab.canceled -= m_Wrapper.m_LeftHandCustomActionsCallbackInterface.OnGrab;
+                @Move.started -= m_Wrapper.m_LeftHandCustomActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_LeftHandCustomActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_LeftHandCustomActionsCallbackInterface.OnMove;
             }
-            m_Wrapper.m_VRLeftHandActionsCallbackInterface = instance;
+            m_Wrapper.m_LeftHandCustomActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @MoveJoystick.started += instance.OnMoveJoystick;
-                @MoveJoystick.performed += instance.OnMoveJoystick;
-                @MoveJoystick.canceled += instance.OnMoveJoystick;
+                @Grab.started += instance.OnGrab;
+                @Grab.performed += instance.OnGrab;
+                @Grab.canceled += instance.OnGrab;
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
             }
         }
     }
-    public VRLeftHandActions @VRLeftHand => new VRLeftHandActions(this);
-
-    // VRRightHand
-    private readonly InputActionMap m_VRRightHand;
-    private IVRRightHandActions m_VRRightHandActionsCallbackInterface;
-    private readonly InputAction m_VRRightHand_Newaction;
-    public struct VRRightHandActions
+    public LeftHandCustomActions @LeftHandCustom => new LeftHandCustomActions(this);
+    public interface ILeftHandCustomActions
     {
-        private @MovementScheme m_Wrapper;
-        public VRRightHandActions(@MovementScheme wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Newaction => m_Wrapper.m_VRRightHand_Newaction;
-        public InputActionMap Get() { return m_Wrapper.m_VRRightHand; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(VRRightHandActions set) { return set.Get(); }
-        public void SetCallbacks(IVRRightHandActions instance)
-        {
-            if (m_Wrapper.m_VRRightHandActionsCallbackInterface != null)
-            {
-                @Newaction.started -= m_Wrapper.m_VRRightHandActionsCallbackInterface.OnNewaction;
-                @Newaction.performed -= m_Wrapper.m_VRRightHandActionsCallbackInterface.OnNewaction;
-                @Newaction.canceled -= m_Wrapper.m_VRRightHandActionsCallbackInterface.OnNewaction;
-            }
-            m_Wrapper.m_VRRightHandActionsCallbackInterface = instance;
-            if (instance != null)
-            {
-                @Newaction.started += instance.OnNewaction;
-                @Newaction.performed += instance.OnNewaction;
-                @Newaction.canceled += instance.OnNewaction;
-            }
-        }
-    }
-    public VRRightHandActions @VRRightHand => new VRRightHandActions(this);
-    public interface IVRLeftHandActions
-    {
-        void OnMoveJoystick(InputAction.CallbackContext context);
-    }
-    public interface IVRRightHandActions
-    {
-        void OnNewaction(InputAction.CallbackContext context);
+        void OnGrab(InputAction.CallbackContext context);
+        void OnMove(InputAction.CallbackContext context);
     }
 }
