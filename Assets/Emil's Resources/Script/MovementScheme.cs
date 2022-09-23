@@ -15,12 +15,9 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-
 public partial class @MovementScheme : IInputActionCollection2, IDisposable
 {
     public InputActionAsset asset { get; }
-    public XRIDefaultInputActions input;
-    
     public @MovementScheme()
     {
         asset = InputActionAsset.FromJson(@"{
